@@ -17,9 +17,10 @@ public class HomeController extends AbstractController {
 
     @Override
     protected ModelAndView handleRequestInternal(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
-        ModelAndView mview = new ModelAndView("map");
+        ModelAndView mview = new ModelAndView("cordoba");
         List<Ciudad> ciudades = (List<Ciudad>) this.cityDao.getAll();
         mview.addObject("ciudades", ciudades);
+        
         return mview;
     }
 

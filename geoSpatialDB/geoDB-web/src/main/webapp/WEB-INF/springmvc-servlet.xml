@@ -9,7 +9,7 @@
 	    <property name="suffix" value=".jsp"></property>
 	</bean>
 	
-	<bean name="/*.htm" class="ar.edu.misi.advancedDB.web.HomeController">
+	<bean name="/cordoba.kml" class="ar.edu.misi.advancedDB.web.HomeController">
 		<property name="cityDao" ref="cityDao" />
 	</bean>
 	

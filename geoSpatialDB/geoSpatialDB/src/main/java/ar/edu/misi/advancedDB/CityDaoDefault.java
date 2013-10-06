@@ -25,21 +25,24 @@ public class CityDaoDefault extends BaseDao implements CityDao {
             s = this.conn.createStatement();
 
             PGgeometry geom = null;
-            ResultSet r = s.executeQuery("select ST_AsText(geom) as geom, id from geomtable");
+            ResultSet r = s.executeQuery("select geom, nombre from ciudades ORDER BY idciudad");
             ciudades = new ArrayList<Ciudad>();
             Ciudad ciudad = null;
             while (r.next()) {
                 /*
                  * Retrieve the geometry as an object then cast it to the geometry type. Print things out.
                  */
-                geom = (PGgeometry) r.getObject(1);
+                geom = (PGgeometry) r.getObject("geom");
                 ciudad = new Ciudad();
-                ciudad.setName(r.getString("name"));
-                ciudad.setGeoPoint(geom.getGeometry().getFirstPoint());
+                ciudad.setName(r.getString("nombre"));
+                if (geom != null) {
+                    ciudad.setGeoPoint(geom.getGeometry().getFirstPoint());
+                }
                 ciudades.add(ciudad);
             }
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {

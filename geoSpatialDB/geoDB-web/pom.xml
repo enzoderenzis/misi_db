@@ -2,11 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>ar.edu.advancedDB</groupId>
+		<groupId>ar.edu.misi.advancedDB</groupId>
 		<artifactId>geoSpatial</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<groupId>ar.edu.advancedDB</groupId>
+	<groupId>ar.edu.misi.advancedDB</groupId>
 	<artifactId>geoDB-web</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
@@ -21,6 +21,11 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-dependency-plugin</artifactId>
+		        <version>2.8</version>
+		    </plugin>
 		</plugins>
 	</build>
 	<properties>
@@ -50,7 +55,7 @@
 		</dependency>
 
 		<dependency>
-			<groupId>ar.edu.advancedDB</groupId>
+			<groupId>ar.edu.misi.advancedDB</groupId>
 			<artifactId>geoSpatialDB</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
