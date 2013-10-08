@@ -15,7 +15,9 @@ public abstract class BaseDao {
 
     protected void close() {
         try {
-            this.conn.close();
+            if (this.conn != null) {
+                this.conn.close();
+            }
             this.conn = null;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -37,6 +39,7 @@ public abstract class BaseDao {
              */
             org.postgresql.jdbc4.Jdbc4Connection posConnection = ((org.postgresql.jdbc4.Jdbc4Connection) this.conn);
             posConnection.addDataType("geometry", "org.postgis.PGgeometry");
+            posConnection.addDataType("polygon", "org.postgresql.geometric.PGpolygon");
             posConnection.addDataType("box3d", "org.postgis.PGbox3d");
 
         } catch (Exception e) {

@@ -11,9 +11,13 @@
 	
 	<bean name="/cordoba.kml" class="ar.edu.misi.advancedDB.web.HomeController">
 		<property name="cityDao" ref="cityDao" />
+		<property name="lugarDao" ref="lugaresDao" />
+		<property name="zonasCalorDao" ref="zonasDao" />
 	</bean>
 	
 	
 	<bean id="cityDao" class="ar.edu.misi.advancedDB.CityDaoDefault" />
+	<bean id="lugaresDao" class="ar.edu.misi.advancedDB.LugarDaoDefault" />
+	<bean id="zonasDao" class="ar.edu.misi.advancedDB.ZonaCalorDaoDefault" />
 
 </beans>
