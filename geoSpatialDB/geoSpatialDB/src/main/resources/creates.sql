@@ -55,3 +55,26 @@ WITH (
 );
 ALTER TABLE public.zonas_calor
   OWNER TO postgres;
+
+  
+ALTER TABLE public.zonas_calor ADD column id_medicion integer;
+  
+-- Table: public.mediciones
+
+-- DROP TABLE public.mediciones;
+
+CREATE TABLE public.mediciones
+(
+  id integer NOT NULL,
+  anio integer,
+  id_ciudad integer not NULL,
+  CONSTRAINT pk_med PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.mediciones
+  OWNER TO postgres;
+
+
+

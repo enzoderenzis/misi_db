@@ -8,4 +8,6 @@ public interface ZonasCalorDao {
 
     List<ZonaCalor> getAll();
 
+    List<ZonaCalor> getAllByAnio(Integer anio);
+
 }
